@@ -8,13 +8,31 @@
 </html>
 <script src="interact.js"></script>
 <link rel="stylesheet" href="main.css"> <!--Import Css into HTML-->
-
 <header id="warp">
-    <input class = "input1"id="input_1" type="number"></input>
-    <d1 class = "label"> Enter Number 1 </d1>
-    <input class = "input2"id="input_2" type="number"> </input>
-    <d1 class="label">Enter Number 2</d1>
-    <button class="calc" onclick= "add()">+</button>
+
+
+    <body>
+        <p> Enter Number 1 </p>
+        <input id="input_1" type="number"></input>
+        <p>Enter Number 2</p>   
+        <input id="input_2" type="number"> </input>
+        <p>Enter Your Unit</p>   
+        <input id="unit_input" type="text"> </input>
+        
+
+
+            <div><br />
+                <input type="radio" onclick="add()" id="rad1">+</input> <br />
+                <input type="radio" onclick="sub()" id="rad2">-</input> <br />
+                <input type="radio" onclick="mult()" id="rad3">x</input> <br />
+                <input type="radio" onclick="div()" id="rad4">/</input> <br /><br />
+                <button  onclick= "oporation()">
+                    CALCULATE
+                </button>
+            </div>
+    </body>
+
+
 </header>
 
 
