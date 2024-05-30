@@ -11,28 +11,3 @@ body {
     background-position-x: center;
 }
 
-.input1 {
-    margin-left: 50%;
-    text-align: georgia;
-    color: rgb(0, 0, 0);
-}
-.input2 {
-    margin-left: 50%;
-    text-align: georgia;
-}
-
-.label {
-    color: #fff;
-    font-style: bold;
-}
-
-
-.calc {
-    margin-left: 50%;
-    font-style: georgia;
-}
-
-.add  {
-    margin-top: 0%;
-    margin-left: 50%;
-}
