@@ -1,59 +1,97 @@
-<!--Saba Kochadze
-    May 28, 2023
-    Lab 1 GUI Website
+//  Saba Kochadze
+//  May 28, 2023
+//  Lab 1 GUI Website
 
-    Range Slider update 6/11/2024
--->
-
-<!DOCTYPE html>
-<html lang="en">
-</html>
-<script src="interact.js"></script>
-<link rel="stylesheet" href="main.css"> <!--Import Css into HTML-->
-<header id="warp">
+//Range Slider Update 6/11/2024
 
 
-    <body>
-        <p> Enter Number 1 </p>
-        <input id="input_1" type="number"></input>
-        <p>Enter Number 2</p>   
-        <input id="input_2" type="number"> </input>
-        <p>Enter Your Unit</p>   
-        <input id="unit_input" type="text"> </input>
-        <p></p>
+//  Mirroring Slider
 
-        <!--    Create range -10 - 10   -->
+function range_disp1(){ //original slider
 
-        -10<input id="slider1" type="range" type="number" min="-10" max="10" oninput="range_disp1()"></input>10
-        <p></p>
-        -10<input id="slider2" type="range" type="number" min="-10" max="10"></input>10
-        <p id="range_value1">Slider Value: </output></p>
-        <p></p>
+    window.range1 = document.getElementById("slider1").value; // value scan works
+    window.range2 = document.getElementById("slider2").value;
 
+    window.paragrapgh = document.getElementById("range_value1");
+    paragrapgh.textContent = "Value: " + range1;
+//mirrored value
+    slider2.value = slider1.value;
 
-            <div><br />
-                <input type="radio" onclick="add()" id="rad1">+</input> <br />
-                <input type="radio" onclick="sub()" id="rad2">-</input> <br />
-                <input type="radio" onclick="mult()" id="rad3">x</input> <br />
-                <input type="radio" onclick="div()" id="rad4">/</input> <br /><br />
-                <!--                <button  onclick= "clear()">
-                    CLEAR
-                </button>-->
+}
 
-                <button  onclick= "oporation()">
-                    CALCULATE
-                </button>
-                <p id="Calc-integer" style="font-size: 50px;"></p>
-                <p id="Calc-slider" style="font-size: 50px;"></p>
-            </div>
-    </body>
+//slider mirror
 
 
-</header>
 
 
-<head>
-<h1>
+function add ()
+{
 
-</h1>
-</head>
+    document.getElementById("rad2").checked = false
+    document.getElementById("rad3").checked = false
+    document.getElementById("rad4").checked = false
+    var input1 = parseInt(document.getElementById("input_1").value, 10);
+    var input2 = parseInt(document.getElementById("input_2").value, 10);
+    window.sum = input1 + input2;
+
+
+}
+function sub ()
+{
+    document.getElementById("rad1").checked = false
+    document.getElementById("rad3").checked = false
+    document.getElementById("rad4").checked = false
+    var input1 = parseInt(document.getElementById("input_1").value, 10);
+    var input2 = parseInt(document.getElementById("input_2").value, 10);
+    window.sum = input1 - input2;
+
+}
+function mult ()
+{
+    document.getElementById("rad1").checked = false
+    document.getElementById("rad2").checked = false
+    document.getElementById("rad4").checked = false
+    var input1 = parseInt(document.getElementById("input_1").value, 10);
+    var input2 = parseInt(document.getElementById("input_2").value, 10);
+    window.sum = input1 * input2;
+
+}
+function div ()
+{
+    document.getElementById("rad1").checked = false
+    document.getElementById("rad2").checked = false
+    document.getElementById("rad3").checked = false
+    var input1 = parseInt(document.getElementById("input_1").value, 10);
+    var input2 = parseInt(document.getElementById("input_2").value, 10);
+    window.sum = input1 / input2;
+
+}
+
+
+function oporation ()
+{
+
+
+    var unt = document.getElementById("unit_input").value
+
+    window.paragrapgh = document.getElementById("Calc-integer");
+    paragrapgh.textContent = "Result is: " + window.sum + " " + unt;
+
+
+}
+
+
+
+
+// TO BE ADDED
+function   clear() 
+{
+    document.getElementById("rad1").checked = false
+    document.getElementById("rad2").checked = false
+    document.getElementById("rad3").checked = false
+    document.getElementById("rad4").checked = false
+    
+    document.getElementById('Calc-integer').innerHTML = '';
+
+    window.sum = 0;
+}
